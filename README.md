@@ -4,6 +4,6 @@ The purpose of this analysis was to determine the number of retiring employees p
 
 ## Results
 * The silver tsunami will hit senior engingeering the hardest with more than 29,000 employees reaching retirement as seen in this [breakdown](https://github.com/LaurenSonis/Pewlett-Hackard-Analysis/blob/main/2021-01-24%20(4).png).
+* Likewise, and maybe not surprisingly, senior staff will also be hit hard at more than 28,000 employees reaching retirement age.
 * Meanwhile, management will not suffer much with only two employees reaching retirement age.
-* 
-* There are [1,940] employees eligible for the mentorship program.
+* There are [1,940](https://github.com/LaurenSonis/Pewlett-Hackard-Analysis/blob/main/2021-01-24%20(6).png) employees eligible for the mentorship program.
