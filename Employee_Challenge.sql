@@ -73,13 +73,28 @@ SELECT * FROM employees
 	WHERE (birth_date BETWEEN '1952-01-01' AND '1955-12-31')
 	ORDER BY employees.emp_no
 -- Use Distinct with Orderby to remove duplicate rows
-SELECT emp_no, first_name, last_name, title
-	FROM retirement_titles_table
-SELECT DISTINCT ON (retirement_titles_table.emp_no) retirement_titles_table.emp_no 
+
+SELECT DISTINCT ON (retirement_titles_table.emp_no) 
+retirement_titles_table.emp_no, 
 retirement_titles_table.first_name,
 retirement_titles_table.last_name,
 retirement_titles_table.title
 INTO Unique_titles
-FROM retirement_titles_table as r
-ORDER BY r.emp_no, r.to_date DESC;
+FROM retirement_titles_table
+ORDER BY retirement_titles_table.emp_no, retirement_titles_table.to_date DESC;
+-- get number of titles
+-- get number of titles
+SELECT COUNT (title)
+FROM Unique_titles;
+-- answer 300024
+SELECT DISTINCT ON (unique_titles.title, unique_titles.count) 
+	unique_titles.count,
+	unique_titles.title 
+INTO Retiring_titles
+	FROM Unique_titles
+	GROUP BY unique_titles.title
+	ORDER BY unique_titles.count DESC;
+SELECT * FROM retiring_titles
+
+
 
