@@ -95,60 +95,6 @@ INTO Retiring_titles
 	GROUP BY unique_titles.title
 	ORDER BY unique_titles.count DESC;
 SELECT * FROM retiring_titles
--- Deliverable 2
--- Create Mentorship Eligibility Table
-SELECT emp_no, first_name, last_name, birth_date
-	FROM employees;
-SELECT from_date, to_date
-	FROM dept_emp;
-SELECT title
-	FROM titles;
--- JOIN tables
-	SELECT employees.emp_no,
-       employees.first_name,
-       employees.last_name,
-	   employees.birth_date,
-	   dept_emp.from_date,
-	   dept_emp.to_date
-	INTO mentorship_eligibility
-	FROM employees
-	LEFT JOIN dept_emp
-	ON employees.emp_no = dept_emp.emp_no;
-SELECT employees.emp_no,
-       employees.first_name,
-       employees.last_name,
-	   employees.birth_date,
-	   titles.title
-	INTO mentorship_eligibility2
-	FROM employees
-	LEFT JOIN titles
-	ON employees.emp_no = titles.emp_no;
 
-SELECT mentorship_eligibility.emp_no,
-       mentorship_eligibility.first_name,
-       mentorship_eligibility.last_name,
-	   mentorship_eligibility.birth_date,
-	   mentorship_eligibility.from_date,
-	   mentorship_eligibility.to_date,
-	   titles.title
-	INTO mentorship_eligibility3
-	FROM mentorship_eligibility
-	LEFT JOIN titles
-	ON mentorship_eligibility.emp_no = titles.emp_no;
--- JOIN tables
-	SELECT mentorship_eligibility.emp_no,
-       mentorship_eligibility.first_name,
-       mentorship_eligibility.last_name,
-	   mentorship_eligibility.birth_date,
-	   mentorship_eligibility.from_date,
-	   mentorship_eligibility.to_date,
-	   titles.title
-	INTO mentorship_eligibility3
-	FROM mentorship_eligibility
-	LEFT JOIN titles
-	ON mentorship_eligibility.emp_no = titles.emp_no
-	WHERE birth_date BETWEEN '1965-01-01' AND '1965-12-31'
-	ORDER BY to_date DESC, emp_no ASC;
-	SELECT * FROM mentorship_eligibility3
 
-	
+
